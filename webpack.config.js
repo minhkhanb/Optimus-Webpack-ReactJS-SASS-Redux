@@ -24,7 +24,7 @@ module.exports = {
     },
     resolve: {
         modulesDirectories: ['node_modules', 'src', path.join(__dirname, 'static', 'sass')],
-        extensions: ['', '.js', '.sass']
+        extensions: ['', '.js', '.sass', '.css']
     },
     module: {
         loaders: [
