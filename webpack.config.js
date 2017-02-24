@@ -23,7 +23,7 @@ module.exports = {
         hot: true
     },
     resolve: {
-        modulesDirectories: ['node_modules', 'src', path.join(__dirname, 'static','sass')],
+        modulesDirectories: ['node_modules', 'src', path.join(__dirname, 'static', 'sass')],
         extensions: ['', '.js', '.sass']
     },
     module: {
@@ -36,12 +36,16 @@ module.exports = {
             {
                 test: /\.sass$/,
                 loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?.*$|$)/,
+                loader: 'file'
             }
         ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        new ExtractTextPlugin( 'screen.css')
+        new ExtractTextPlugin('screen.css')
     ]
 }
